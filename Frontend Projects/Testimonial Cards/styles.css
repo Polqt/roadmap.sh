@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Figtree', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 600px;
+    position: relative;
+    transition: all 0.3s ease; /* Smooth transitions for resizing */
+}
+
+.testimonial-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.profile-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profiles {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.profiles img:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    border: 3px solid #333;
+}
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 1rem;
+    color: #333;
+}
+
+.arrow:hover {
+    color: #666;
+}
+
+.profile-name {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+/* Responsiveness */
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        width: 90%; 
+        padding: 30px; 
+    }
+
+    .testimonial-text {
+        font-size: 1.1rem; 
+    }
+
+    .profile-pic {
+        width: 60px; 
+        height: 60px;
+    }
+
+    .profiles img:nth-child(2) {
+        width: 80px; /* Smaller center profile pic */
+        height: 80px;
+    }
+
+    .arrow {
+        font-size: 1.5rem; 
+    }
+
+    .profile-name {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-card {
+        width: 100%; 
+        padding: 20px;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;  
+    }
+
+    .profile-pic {
+        width: 50px; 
+        height: 50px;
+    }
+
+    .profiles img:nth-child(2) {
+        width: 70px; 
+        height: 70px;
+    }
+
+    .arrow {
+        font-size: 1.2rem;
+    }
+
+    .profile-name {
+        font-size: 1rem;
+    }
+}
