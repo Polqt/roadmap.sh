@@ -9,6 +9,7 @@
 - [x] [Testimonial Cards](https://roadmap.sh/projects/testimonial-cards)
 - [x] [Task Tracker](https://roadmap.sh/projects/task-tracker-js)
 - [x] [Custom Dropdown](https://roadmap.sh/projects/custom-dropdown)
+- [x] [Accordion](https://roadmap.sh/projects/accordion)
 
 ## [Backend Projects](https://roadmap.sh/backend)
 - [x] [Task Tracker CLI](https://roadmap.sh/projects/task-tracker)
