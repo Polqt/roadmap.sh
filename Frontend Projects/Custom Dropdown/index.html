@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Custom Dropdown</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>
+    <body>
+        <div class="max-w-sm mx-auto p-5 divide-y space-y-5">
+            <div x-data="select1">
+                <div x-model="defaultValue">
+                    <div x-data="select(data, defaultValue, 'Please select a value')">
+                        <label id="listbox-label" class="block text-sm font-medium text-gray-700" @click="$refs.button.focus();">Select 1</label>
+                        <div class="mt-1 relative">
+                            <button title="button" x-bind="button" type="button" class="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" @listbox-focus.window="$event.detail === '' && $refs.button.click();">
+                                <span class="block truncate" x-bind="selectedItemLabel"></span>
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <i class="fa-solid text-gray-400" x-bind="caretIcon"></i>
+                                </span>
+                            </button>
+                            <ul title="list" x-bind="listbox" class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" role="listbox" tabindex="-1">
+                                <template x-bind="list" hidden aria-hidden="true">
+                                    <li x-bind="listItem" class="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9" role="option">
+                                        <span class="font-normal block truncate" x-bind="listItemLabel"></span>
+                                        <span class="text-indigo-600 absolute inset-y-0 right-0 flex items-center pr-4" x-bind="listItemCheckIcon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <span x-text="optionLabel"></span>
+            </div>
+
+            <div class="pt-3" x-data="select2">
+                <div x-model="defaultValue">
+                    <div x-data="select([{&quot;label&quot;:&quot;Foo&quot;,&quot;value&quot;:1},{&quot;label&quot;:&quot;Bar&quot;,&quot;value&quot;:2},{&quot;label&quot;:&quot;Baz&quot;,&quot;value&quot;:3}], defaultValue, 'Please select a value')">
+                        <label id="listbox-label" class="block text-sm font-medium text-gray-700" @click="$refs.button.focus();">Select 2</label>
+                        <div class="mt-1 relative">
+                            <button title="button" x-bind="button" type="button" class="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" @listbox-focus.window="$event.detail === '' && $refs.button.click();">
+                                <span class="block truncate" x-bind="selectedItemLabel"></span>
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <i class="fa-solid text-gray-400" x-bind="caretIcon"></i>
+                                </span>
+                            </button>
+                            <ul title="list" x-bind="listbox" class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" role="listbox" tabindex="-1">
+                                <template x-bind="list" hidden aria-hidden="true">
+                                    <li x-bind="listItem" class="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9" role="option">
+                                        <span class="font-normal block truncate" x-bind="listItemLabel"></span>
+                                        <span class="text-indigo-600 absolute inset-y-0 right-0 flex items-center pr-4" x-bind="listItemCheckIcon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <span x-text="defaultValue"></span>
+            </div>
+
+            <div class="pt-3" x-data="select3">
+                <div x-model="defaultValue">
+                    <div x-data="select(data, defaultValue, 'Please select a value')">
+                        <label id="listbox-label" class="block text-sm font-medium text-gray-700" @click="$refs.button.focus();">Select 3</label>
+                        <div class="mt-1 relative">
+                            <button title="button" x-bind="button" type="button" class="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" @listbox-focus.window="$event.detail === '' && $refs.button.click();">
+                                <span class="block truncate" x-bind="selectedItemLabel"></span>
+                                <span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <i class="fa-solid text-gray-400" x-bind="caretIcon"></i>
+                                </span>
+                            </button>
+                            <ul title="list" x-bind="listbox" class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm" role="listbox" tabindex="-1">
+                                <template x-bind="list" hidden aria-hidden="true">
+                                    <li x-bind="listItem" class="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9" role="option">
+                                        <span class="font-normal block truncate" x-bind="listItemLabel"></span>
+                                        <span class="text-indigo-600 absolute inset-y-0 right-0 flex items-center pr-4" x-bind="listItemCheckIcon">
+                                            <i class="fa-solid fa-check"></i>
+                                        </span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <span x-text="optionLabel"></span>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
