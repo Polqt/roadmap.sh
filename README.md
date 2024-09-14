@@ -8,6 +8,7 @@
 - [x] [Changelog Component](https://roadmap.sh/projects/changelog-component)
 - [x] [Testimonial Cards](https://roadmap.sh/projects/testimonial-cards)
 - [x] [Task Tracker](https://roadmap.sh/projects/task-tracker-js)
+- [x] [Custom Dropdown](https://roadmap.sh/projects/custom-dropdown)
 
 ## [Backend Projects](https://roadmap.sh/backend)
-- [x] [Task Tracker](https://roadmap.sh/projects/task-tracker)
+- [x] [Task Tracker CLI](https://roadmap.sh/projects/task-tracker)
