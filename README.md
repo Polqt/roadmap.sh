@@ -13,3 +13,4 @@
 
 ## [Backend Projects](https://roadmap.sh/backend)
 - [x] [Task Tracker CLI](https://roadmap.sh/projects/task-tracker)
+- [x] [Number Guessing Game](https://roadmap.sh/projects/number-guessing-game)

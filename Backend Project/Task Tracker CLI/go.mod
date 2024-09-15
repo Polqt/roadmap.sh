@@ -1,4 +1,4 @@
-module task-tracking-cli
+module github.com/Polqt-task-tracker
 
 go 1.23.1
 

@@ -1,11 +1,10 @@
 package main
 
-
 func main() {
 	trackers := Trackers{}
-	trackers.add("Task 1")
-	trackers.add("Task 2")
-
-	trackers.toggle(0)
-	trackers.print()
+	library := NewLibrary[Trackers]("trackers.json")
+	library.Load(&trackers)
+	cmdFlags := NewCmdFlags()
+	cmdFlags.Execute(&trackers)
+	library.Save(trackers)
 }

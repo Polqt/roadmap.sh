@@ -1,0 +1,23 @@
+[
+    {
+        "ID": 0,
+        "Description": "Play a guitar",
+        "Status": "done",
+        "CreatedAt": "2024-09-15T13:08:43.8667716+08:00",
+        "UpdatedAt": "2024-09-15T13:59:58.1952066+08:00"
+    },
+    {
+        "ID": 1,
+        "Description": "Study before midterms",
+        "Status": "todo",
+        "CreatedAt": "2024-09-15T13:53:45.6928987+08:00",
+        "UpdatedAt": "2024-09-15T13:53:45.6928987+08:00"
+    },
+    {
+        "ID": 2,
+        "Description": "Make a Blog Web App using Node and Express",
+        "Status": "todo",
+        "CreatedAt": "2024-09-15T14:20:39.5529128+08:00",
+        "UpdatedAt": "2024-09-15T14:20:39.5529128+08:00"
+    }
+]

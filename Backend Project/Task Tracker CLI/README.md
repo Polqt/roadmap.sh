@@ -18,54 +18,23 @@ Each task has the following properties:
 - `createdAt`: The date and time when the task was created.
 - `updatedAt`: The date and time when the task was last updated.
 
-## Usage
+## File Descriptions
 
-The application is run from the command line, accepting various commands to perform operations on tasks. Below are the available commands:
+# main.go
 
-1. **Add a task**
-    ```bash
-    tasktracker add "Task description"
-    ```
+Contains the main function that initializes the application, loads tasks, processes commands, and saves tasks.
 
-2. **Update a task**
-    ```bash
-    tasktracker update <task_id> "Updated description"
-    ```
+# command.go
 
-3. **Delete a task**
-    ```bash
-    tasktracker delete <task_id>
-    ```
+Defines the command-line flags and the Execute method to handle user commands.
 
-4. **Mark a task as in progress**
-    ```bash
-    tasktracker inprogress <task_id>
-    ```
+# tracker.go
 
-5. **Mark a task as done**
-    ```bash
-    tasktracker done <task_id>
-    ```
+Contains the Tracker struct and methods to manage tasks, including adding, editing, deleting, toggling status, and printing tasks.
 
-6. **List all tasks**
-    ```bash
-    tasktracker list
-    ```
+# library.go
 
-7. **List all tasks that are done**
-    ```bash
-    tasktracker list --done
-    ```
-
-8. **List all tasks that are not done**
-    ```bash
-    tasktracker list --notdone
-    ```
-
-9. **List all tasks that are in progress**
-    ```bash
-    tasktracker list --inprogress
-    ```
+Handles saving and loading task data to and from a JSON file.
 
 ## Requirements
 
@@ -102,26 +71,45 @@ The application is run from the command line, accepting various commands to perf
     - Clean up your code and add necessary comments.
     - Write documentation (like this README) to guide users on how to use the Task Tracker CLI.
 
-## Example
+## Commands
 
-<!-- ```bash
-$ tasktracker add "Finish homework"
-Task added: [1] Finish homework
+# Add a New Task
 
-$ tasktracker list
-1. [1] Finish homework (todo)
+Add a new task with a description.
+<!-- go run main.go --add "Your task description" -->
 
-$ tasktracker inprogress 1
-Task 1 marked as in-progress.
+# Edit a Task Description
 
-$ tasktracker list --inprogress
-1. [1] Finish homework (in-progress)
+Edit the description of an existing task by ID.
+<!-- go run main.go --edit id:new_description -->
+Example:
+<!-- go run main.go --edit 1:Updated task description -->
 
-$ tasktracker done 1
-Task 1 marked as done.
+# Set a Task Status
 
-$ tasktracker list --done
-1. [1] Finish homework (done) -->
+Set the status of a task by ID. Allowed statuses are todo, in-progress, and done.
+<!-- go run main.go --status id:new_status -->
+Example:
+<!-- go run main.go --status 1:done -->
+
+# Delete a Task
+
+Delete a task by ID.
+<!-- go run main.go --del id -->
+Example:
+<!-- go run main.go --del 1 -->
+
+# Toggle a Task Status
+
+Toggle a task's status through its lifecycle: todo -> in-progress -> done -> todo.
+<!-- go run main.go --toggle id -->
+Example:
+<!-- go run main.go --toggle 1 -->
+
+# List All Tasks
+
+List all tasks with their details.
+<!-- go run main.go --list -->
 
 ## Conclusion
 
